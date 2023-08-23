@@ -42,11 +42,13 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest']['name'])
+            podcast_guest_name = podcast_info.get('podcast_guest', {}).get('name', 'Guest Name Not Available')
+            st.write(podcast_guest_name)
 
         with col4:
             st.subheader("Podcast Guest Details")
-            st.write(podcast_info["podcast_guest"]['summary'])
+            podcast_guest_summary = podcast_info.get('podcast_guest', {}).get('summary', 'Guest Details Not Available')
+            st.write(podcast_guest_summary)
 
         # Display the five key moments
         st.subheader("Key Moments")
